@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning curve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Chaher Souilem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'learning_curve' %}">Learning Curve</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{% static 'pdf/ChaherSouilem-Resume.pdf' %}" download="ChaherSouilem-Resume.pdf">Download Resume</a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="bodyx">
+    <div class="row justify-content-center text-center">
+        
+        <div class="container-fluid">
+        <div class="col-md-12">
+            <h4>Summary</h4>
+            <div class="card card-body h-100">
+                <h5>React</h5>
+                <h6>1- React Full Course for free ⚛️ (2024) </h6>
+                <div class="embed-responsive embed-responsive-16by9"style="max-width: 700px; margin: 0 auto;">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CgkZ7MvWUAA?si=VtvF7RgCkNtHOgaj" allowfullscreen></iframe>
+                </div>
+                <hr>
+                <div style="text-align: left;">
+                <p>- React is a JavaScript library for building user interfaces, focusing on components, which are reusable building blocks.</p>  
+                <p>- React utilizes a Virtual DOM to efficiently update and render changes without refreshing the entire web page.</p>              
+                <div class="code-snippet-container">
+                    <div class="code-snippet">
+                        <pre><code class="language-javascript line-numbers">
+npm create vite@latest “project name”
+                        </code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                </div>
+                <p>- Creating a React component involves defining a function, exporting it, and writing JSX code within it.</p> 
+                <div class="code-snippet-container" style="text-align: left";>
+                    <div class="code-snippet">
+                        <pre><code class="language-javascript line-numbers">
+import React from 'react';
+
+// Functional Component
+const Greeting = ({ name }) => {
+return (
+    <div>
+        <h1>Hello, {name}!</h1>
+        <p>Welcome to my React component example.</p>
+    </div>
+    );
+ };
+                            
+export default Greeting;
+                        </code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                </div>
+                <br>
+                <p style="text-align: left;">- We can style React components with CSS using three methods: external, modules, and inline.</p>
+                <p style="text-align: left;">- Props = read-only properties that are shared between components A parent component can send data to a child component.</p>
+                <p style="text-align: left;">- React hook = Special function that allows functional components
+                    to use React features without writing class components (React v16.8) (usestate, useEffect, useContext, useReducer, useCallback, and more.</p>
+                <p style="text-align: left;">- useState() = A React hook that allows the creation of a stateful variable
+                    AND a setter function to update its value in the Virtual DOM.</p>
+                    <div class="code-snippet-container">
+                        <div class="code-snippet">
+                            <pre><code class="language-javascript line-numbers">
+    import React, { useState } from 'react';
+
+    function MyComponent() {
+        // Declare a stateful variable called 'name' initialized to an empty string
+        // 'setName' is the setter function used to update the 'name' state
+        const [name, setName] = useState('');
+                                
+        return (
+            <div>
+             <p>Name: {name}</p>
+              <input 
+                type="text" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+                placeholder="Enter your name" 
+              />
+            </div>
+        );
+    }
+                                
+        export default MyComponent;
+                            </code></pre>
+                        </div>
+                        <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                    </div> 
+                    <p style="text-align: left;">- updater function = A function passed as an argument to setstate() usually
+                        ex. setYear (year+ 1), it allow for safe updates based on the previous state
+                        Used with multiple state updates and asynchronous function
+                        Good practice to use updater functions.</p> 
+                        <div class="code-snippet-container">
+                            <div class="code-snippet">
+                                <pre><code class="language-javascript line-numbers">
+import React, { useState } from 'react';
+
+function MyComponent() {
+    const [year, setYear] = useState(2022);
+
+    const incrementYear = () => {
+        // Using updater function to update year based on previous state
+        setYear(prevYear => prevYear + 1);
+    };
+
+    return (
+        <div>
+            <p>Year: {year}</p>
+            <button onClick={incrementYear}>Increment Year</button>
+        </div>
+    );
+}
+
+export default MyComponent;
+
+                                </code></pre>
+                            </div>
+                            <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                        </div> 
+                        <p style="text-align: left;">- UseEffect = React Hook that tells React DO SOME CODE WHEN:</p> 
+                        <ul>
+                            <p>1- This component re-renders.</p>
+                            <p>2- This component mounts.</p>
+                            <p>3- The state of a value.</p>
+                            <P>1. useEffect(() = ()) Runs after every re-render.</p>
+                                <P>  2. useEffect(() = (), []) Runs only on mount.</p>
+                                    <P>  3. useEffect(( => (J, [value]) // Runs on mount + when value changes.</p>
+                                        <P>  USES:</p>
+                                            <P>  1- Event Listeners.</p>
+                                                <P>  2- DOM manipulation.</p>
+                                                    <P>  3- Subscriptions (real-time updates).</p>
+                                                        <P>  4- Fetching Data from an API.</p>
+                                                            <P>  5- Clean up when a component unmounts.</P>
+                        </ul>
+                        <div class="code-snippet-container">
+                            <div class="code-snippet">
+                                <pre><code class="language-javascript line-numbers">
+    import React, { useState, useEffect } from 'react';
+
+    function ExampleComponent() {
+        const [count, setCount] = useState(0);
+                                    
+        // This useEffect hook runs after every re-render
+        useEffect(() => {
+                // Update the document title with the current count
+                document.title = `Count: ${count}`;
+        });
+                                    
+        return (
+                <div>
+                <p>Count: {count}</p>
+                <button onClick={() => setCount(count + 1)}>Increment</button>
+                </div>
+        );
+    }
+                                    
+    export default ExampleComponent;
+                                    
+
+                                </code></pre>
+                            </div>
+                            <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                        </div> 
+                        <P>- useContext() = React Hook that allows you to share values
+                            between multiple levels of components without passing props through each level.   </P>
+                            <div class="code-snippet-container">
+                                <div class="code-snippet">
+                                    <pre><code class="language-javascript line-numbers">
+ import React, { createContext, useContext } from 'react';
+
+// Create a context
+const MyContext = createContext();
+
+// Parent component providing context
+function ParentComponent() {
+    // Define the value to be shared
+    const sharedValue = "Hello from Parent";
+
+    return (
+        <MyContext.Provider value={sharedValue}>
+            <ChildComponent />
+        </MyContext.Provider>
+    );
+}
+
+// Child component consuming context
+function ChildComponent() {
+    // Consume the context value
+    const valueFromContext = useContext(MyContext);
+
+    return <p>{valueFromContext}</p>;
+}
+
+    
+                                    </code></pre>
+                                </div>
+                                <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+                            </div> 
+                            <P>- useRef()= use Reference" Does not cause re-renders when its value changes.
+                                When you want a component to "remember" some information, but you don't want that information to trigger new renders.</P>
+                                
+                                
+                                <P>1- Accessing/Interacting with DOM elements.</P>
+                                    <P>2- Handling Focus, Animations, and Transitions.</P>
+                                        <P>3- Managing Timers and Intervals.   </P>
+
+                           <p>In summary:<br>
+
+                            - useRef is for storing values that don't directly affect the UI and don't trigger re-renders when updated.
+                            useState is for managing stateful values that directly affect the UI and trigger re-renders when updated.</p>
+
+                            <p>- React Router: Managing navigation and routing within a React application.</p><hr>
+                            
+                            <h6 class="text-center">2- MUI5 (Material UI) Crash Course</h6>
+                            <div class="embed-responsive embed-responsive-16by9" style="max-width: 800px; margin: 0 auto;">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o1chMISeTC0?si=S61i4mRo2flpiX8v" allowfullscreen></iframe>
+                            </div><br><hr>
+                            <div class="text-center" style="display: flex; justify-content: center;">
+                                <!-- First GIF -->
+                                <div style="margin-right: 20px;">
+                                    <img src="{% static 'images/mui1.gif' %}" alt="First GIF" style="max-width: 400px;">
+                                    <p>1- Home</p>
+                                </div>
+                                <!-- Second GIF -->
+                                <div>
+                                    <img src="{% static 'images/mui2.gif' %}" alt="Second GIF" style="max-width: 400px;">
+                                    <p>2- Tour Card detail</p>
+                                </div>
+                            </div>
+                            
+                            <p>- The implementation of MUI components in a React application:<br><strong>Box</strong>, <strong>Typography</strong>, <strong>Accordion</strong>, <strong>Paper</strong>, <strong>BottomNavigation</strong>, <strong>Modal</strong>, <strong>Button</strong>, <strong>Calendar</strong>, <strong>DatePicker</strong>, <strong>Grid</strong>, and <strong>Card</strong>.</p>
+                            <p>Github Link: <a href="https://github.com/chaherswilem/React-MUI/">https://github.com/chaherswilem/React-MUI/</a></p>
+
+                            
+                            
+
+                            
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <script>
+            function copyToClipboard(selector) {
+                const codeSnippet = document.querySelector(selector);
+                const text = codeSnippet.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("Code snippet copied to clipboard!");
+                });
+            }
+        </script>
+</body>
+<style>
+    .bodyx {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .code-snippet-container {
+        margin-bottom: 20px;
+    }
+
+    .code-snippet {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+    }
+
+    .code-snippet pre {
+        margin: 0;
+    }
+
+    .copy-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .copy-button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Custom styles to override Bootstrap padding */
+    .code-snippet-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container-fluid {
+        padding: 20px;
+    }
+
+    .embed-responsive {
+        margin-bottom: 20px;
+    }
+</style>
+</html>
+
