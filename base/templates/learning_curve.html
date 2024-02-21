@@ -254,6 +254,78 @@ function ChildComponent() {
                             <p>- The implementation of MUI components in a React application:<br><strong>Box</strong>, <strong>Typography</strong>, <strong>Accordion</strong>, <strong>Paper</strong>, <strong>BottomNavigation</strong>, <strong>Modal</strong>, <strong>Button</strong>, <strong>Calendar</strong>, <strong>DatePicker</strong>, <strong>Grid</strong>, and <strong>Card</strong>.</p>
                             <p>Github Link: <a href="https://github.com/chaherswilem/React-MUI/">https://github.com/chaherswilem/React-MUI/</a></p>
 
+                           <h6 class="text-center">3- Summary</h6>
+                    <p>JavaScript BOM is the interaction between JavaScript and the browser.</p>
+
+<p>JavaScript DOM is the interaction between JavaScript and HTML.</p>
+
+<p>A component is like a section from many sections that consists of a site; it's reusable and can be a function or a class.</p>
+
+<p>Features of React:</p>
+<ul>
+  <li><p>JSX: JavaScript XML, allows us to write HTML in JS code.</p></li>
+  <li><p>One-way binding: This means that a variable can change in JS and HTML without reloading the page.</p></li>
+  <li><p>Virtual DOM.</p></li>
+  <li><p>Simple and rapid, SEO-friendly, size compression of the code in the build phase.</p></li>
+</ul>
+
+<p>React concepts:</p>
+<ul>
+  <li><p>Components.</p></li>
+  <li><p>State.</p></li>
+  <li><p>Lifecycle.</p></li>
+  <li><p>Props.</p></li>
+  <li><p>JSX.</p></li>
+</ul>
+
+<p>We can use React with CDN and CLI.</p>
+
+<p>Props:</p>
+<p>It's an object that gives us the ability to pass data from the father component to the child component. It's public and non-mutable.</p>
+
+<p>State:</p>
+<p>It's private and mutable but can pass state through components using props.</p>
+
+<p>React events:</p>
+<ul>
+  <li><p>onChange.</p></li>
+  <li><p>onClick.</p></li>
+  <li><p>Array iteration using map().</p></li>
+</ul>
+
+<p>We should use key=index in map to avoid confusion.</p>
+
+<p>Styling with ReactJS (CSS): Inline, module, external.</p>
+
+<p>React Router:</p>
+<p>Responsible for all routing in React. We can use <code>&lt;Switch&gt;</code> to avoid any router confusion. Also, <code>exact</code> to get to the exact URL. <code>history.push</code> to get to the destined URL.</p>
+
+<p>Lifecycle of a component:</p>
+<ul>
+  <li><p>Initialization: <code>constructor</code> - use it for variable declaration, states.</p></li>
+  <li><p>Mounting: <code>componentDidMount</code> - initialization of the component in the DOM. <code>render</code> - render the resulting HTML or JS to us.</p></li>
+  <li><p>Updating: <code>shouldComponentUpdate</code> -&gt; <code>componentWillUpdate</code> -&gt; <code>componentDidUpdate</code> - when an update happens to the component.</p></li>
+  <li><p>Unmounting: <code>componentWillUnmount</code> - unlike <code>componentWillMount</code>.</p></li>
+</ul>
+
+<p>Axios:</p>
+<p>Responsible for the connection between the frontend and backend.</p>
+
+<p>Async function:</p>
+<p><code>await</code> is used when we want something to finish before going to the next line.</p>
+
+<p>Redux:</p>
+<p>Used to transfer data between components, better than props, and we can avoid component drilling with it. Redux is centralized data and synchronization of the data shared between components (view), modified by the reducers. <code>const store = createStore()</code>.</p>
+
+<p>React Hooks:</p>
+<p>Since we can't use state and lifecycle components in function components, hooks let us do that. Their functions and ways to interact with component lifecycle and state management.</p>
+<ul>
+  <li><p><code>useState</code>: Enables the function component to have a state, return stateful value and update it.</p></li>
+  <li><p><code>useEffect</code>: Replaces <code>componentDidMount</code>, <code>componentDidUpdate</code>, <code>componentWillUnmount</code>. It gives you the ability to do a side effect function using a happened effect. We can use a list dependency to let React know that we want <code>useEffect</code> to be used as necessary or let it be blank so it's used only once.</p></li>
+  <li><p><code>useRef</code>: Able to take an object as a reference. The current property contains information related to the referred object.</p></li>
+</ul>
+
+
                             
                             
 
