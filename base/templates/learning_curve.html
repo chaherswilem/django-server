@@ -44,7 +44,8 @@
                 <hr>
                 <div style="text-align: left;">
                 <p>- React is a JavaScript library for building user interfaces, focusing on components, which are reusable building blocks.</p>  
-                <p>- React utilizes a Virtual DOM to efficiently update and render changes without refreshing the entire web page.</p>              
+                <p>- React utilizes a Virtual DOM to efficiently update and render changes without refreshing the entire web page.</p>
+                <p>- Creating a react project with Vite build tool:    </p>               
                 <div class="code-snippet-container">
                     <div class="code-snippet">
                         <pre><code class="language-javascript line-numbers">
@@ -76,7 +77,7 @@ export default Greeting;
                 </div>
                 <br>
                 <p style="text-align: left;">- We can style React components with CSS using three methods: external, modules, and inline.</p>
-                <p style="text-align: left;">- Props = read-only properties that are shared between components A parent component can send data to a child component.</p>
+                <p style="text-align: left;">- Props = read-only properties that are shared between components A parent component can send data to a child component, Props are Immutable (their values cannot be changed within the component that receives them).</p>
                 <p style="text-align: left;">- React hook = Special function that allows functional components
                     to use React features without writing class components (React v16.8) (usestate, useEffect, useContext, useReducer, useCallback, and more.</p>
                 <p style="text-align: left;">- useState() = A React hook that allows the creation of a stateful variable
@@ -255,21 +256,21 @@ function ChildComponent() {
                             <p>Github Link: <a href="https://github.com/chaherswilem/React-MUI/">https://github.com/chaherswilem/React-MUI/</a></p>
 
                            <h6 class="text-center">3- Personal Summary</h6>
-                    <p>JavaScript BOM is the interaction between JavaScript and the browser.</p>
+                    <p>- JavaScript BOM is the interaction between JavaScript and the browser.</p>
 
-<p>JavaScript DOM is the interaction between JavaScript and HTML.</p>
+<p>- JavaScript DOM is the interaction between JavaScript and HTML.</p>
 
-<p>A component is like a section from many sections that consists of a site; it's reusable and can be a function or a class.</p>
+<p>- A component is like a section from many sections that consists of a site; it's reusable and can be a function or a class.</p>
 
-<p>Features of React:</p>
+<p>- Features of React:</p>
 <ul>
-  <li><p>JSX: JavaScript XML, allows us to write HTML in JS code.</p></li>
-  <li><p>One-way binding: This means that a variable can change in JS and HTML without reloading the page.</p></li>
-  <li><p>Virtual DOM.</p></li>
+  <li><p>JSX (JavaScript XML): allows us to write HTML in JS code,</p></li>
+  <li><p>One-way binding: This means that a variable can change in JS and HTML without reloading the page,</p></li>
+  <li><p>Virtual DOM,</p></li>
   <li><p>Simple and rapid, SEO-friendly, size compression of the code in the build phase.</p></li>
 </ul>
 
-<p>React concepts:</p>
+<p>- React concepts:</p>
 <ul>
   <li><p>Components.</p></li>
   <li><p>State.</p></li>
@@ -278,29 +279,33 @@ function ChildComponent() {
   <li><p>JSX.</p></li>
 </ul>
 
-<p>We can use React with CDN and CLI.</p>
+<p>- We can use React with CDN and CLI.</p>
 
-<p>Props:</p>
-<p>It's an object that gives us the ability to pass data from the father component to the child component. It's public and non-mutable.</p>
+<p>- Props:</p>
+<p>It's an object that gives us the ability to pass data from the father component to the child component. It's public and Immutable.</p>
 
-<p>State:</p>
+<p>- State:</p>
 <p>It's private and mutable but can pass state through components using props.</p>
 
-<p>React events:</p>
+<p>- React events:</p>
 <ul>
   <li><p>onChange.</p></li>
   <li><p>onClick.</p></li>
   <li><p>Array iteration using map().</p></li>
 </ul>
 
-<p>We should use key=index in map to avoid confusion.</p>
+<p>- We should use key=index in map to avoid confusion.</p>
 
-<p>Styling with ReactJS (CSS): Inline, module, external.</p>
-
-<p>React Router:</p>
+<p>- Styling with ReactJS (CSS): Inline, module, external, also we can use the  CSS-in-JS libraries: (<code>import styled from 'styled-components';</code>) and Emotion (<code>import { css } from '@emotion/react';</code>);</p>
+ 
+<br>
+<p>- React Router:</p>
+<p>Wrapping the entire application <code>&lt;BrowserRouter&gt;</code> provides the routing functionality for React applications using HTML5 history API.</p>
 <p>Responsible for all routing in React. We can use <code>&lt;Switch&gt;</code> to avoid any router confusion. Also, <code>exact</code> to get to the exact URL. <code>history.push</code> to get to the destined URL.</p>
-
-<p>Lifecycle of a component:</p>
+<p><code>&lt;Route&gt;</code> component is used to render a component based on the current URL.</p>
+<p><code>&lt;Link&gt;</code>  component is used to create links that navigate between different pages.</p>
+<br>
+<p>- Lifecycle of a component:</p>
 <ul>
   <li><p>Initialization: <code>constructor</code> - use it for variable declaration, states.</p></li>
   <li><p>Mounting: <code>componentDidMount</code> - initialization of the component in the DOM. <code>render</code> - render the resulting HTML or JS to us.</p></li>
@@ -308,16 +313,16 @@ function ChildComponent() {
   <li><p>Unmounting: <code>componentWillUnmount</code> - unlike <code>componentWillMount</code>.</p></li>
 </ul>
 
-<p>Axios:</p>
+<p>- Axios:</p>
 <p>Responsible for the connection between the frontend and backend.</p>
 
-<p>Async function:</p>
+<p>- Async function:</p>
 <p><code>await</code> is used when we want something to finish before going to the next line.</p>
 
-<p>Redux:</p>
-<p>Used to transfer data between components, better than props, and we can avoid component drilling with it. Redux is centralized data and synchronization of the data shared between components (view), modified by the reducers. <code>const store = createStore()</code>.</p>
+<p>- Redux:</p>
+<p>Suitable for more complex projects, used to transfer data between components, better than props, and we can avoid component drilling with it. Redux is centralized data and synchronization of the data shared between components (view), modified by the reducers. <code>const store = createStore()</code>.</p>
 
-<p>React Hooks:</p>
+<p>- React Hooks:</p>
 <p>Since we can't use state and lifecycle components in function components, hooks let us do that. Their functions and ways to interact with component lifecycle and state management.</p>
 <ul>
   <li><p><code>useState</code>: Enables the function component to have a state, return stateful value and update it.</p></li>
@@ -401,4 +406,3 @@ function ChildComponent() {
     }
 </style>
 </html>
-
