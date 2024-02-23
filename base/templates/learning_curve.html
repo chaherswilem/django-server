@@ -330,6 +330,49 @@ function ChildComponent() {
   <li><p><code>useRef</code>: Able to take an object as a reference. The current property contains information related to the referred object.</p></li>
 </ul>
 
+<h4 class="text-center">Laravel</h4>
+<h6 class="text-center">1- Laravel From Scratch | 4+ Hour Course</h6>
+<div class="embed-responsive embed-responsive-16by9" style="max-width: 800px; margin: 0 auto;">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MYyJ4PuL4pY" allowfullscreen></iframe>
+</div>
+<br><hr>
+<p>Views in Laravel are responsible for rendering the HTML that is sent to the browser. They are typically created using the Blade templating engine.</p>
+
+<p><code>dd</code> stands for "dump and die" in Laravel. It is a debugging function that prints the variables and halts the execution of the script.</p>
+
+<p><code>ddd</code> provides a more detailed and interactive debugging experience.</p>
+
+<p><strong>Routing:</strong></p>
+
+<p><code>api.php</code> is a file in Laravel where you define routes specifically for API endpoints, allowing for a separate route file dedicated to API routes.</p>
+
+<p><code>web.php</code> is a file in Laravel where you define web routes, specifying how the application responds to HTTP requests.</p>
+
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            Route::get('/', [HomeController::class, 'index']);
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+
+<p>=> The root URL (/) is mapped to the index method of the HomeController.</p>
+
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            Route::get('/about', function () {
+                return view('about');
+            });
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+
+<p>=> Returns a view named "about"</p>
+
+<p><code>Eloquent</code> is Laravel's ORM (Object-Relational Mapping) that simplifies database interactions by allowing you to work with databases using an expressive syntax in PHP.</p>
 
                             
                             
