@@ -142,20 +142,20 @@ export default MyComponent;
                             <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
                         </div> 
                         <p style="text-align: left;">- UseEffect = React Hook that tells React DO SOME CODE WHEN:</p> 
-                        <ul>
+                        
                             <p>1- This component re-renders.</p>
                             <p>2- This component mounts.</p>
                             <p>3- The state of a value.</p>
                             <P>1. useEffect(() = ()) Runs after every re-render.</p>
-                                <P>  2. useEffect(() = (), []) Runs only on mount.</p>
-                                    <P>  3. useEffect(( => (J, [value]) // Runs on mount + when value changes.</p>
-                                        <P>  USES:</p>
-                                            <P>  1- Event Listeners.</p>
-                                                <P>  2- DOM manipulation.</p>
-                                                    <P>  3- Subscriptions (real-time updates).</p>
-                                                        <P>  4- Fetching Data from an API.</p>
-                                                            <P>  5- Clean up when a component unmounts.</P>
-                        </ul>
+                            <P>  2. useEffect(() = (), []) Runs only on mount.</p>
+                            <P>  3. useEffect(( => (J, [value]) // Runs on mount + when value changes.</p>
+                            <P>  USES:</p>
+                            <P>  1- Event Listeners.</p>
+                            <P>  2- DOM manipulation.</p>
+                            <P>  3- Subscriptions (real-time updates).</p>
+                            <P>  4- Fetching Data from an API.</p>
+                            <P>  5- Clean up when a component unmounts.</P>
+                     
                         <div class="code-snippet-container">
                             <div class="code-snippet">
                                 <pre><code class="language-javascript line-numbers">
@@ -225,8 +225,8 @@ function ChildComponent() {
                                 
                                 
                                 <P>1- Accessing/Interacting with DOM elements.</P>
-                                    <P>2- Handling Focus, Animations, and Transitions.</P>
-                                        <P>3- Managing Timers and Intervals.   </P>
+                                <P>2- Handling Focus, Animations, and Transitions.</P>
+                                <P>3- Managing Timers and Intervals.   </P>
 
                            <p>In summary:<br>
 
@@ -329,24 +329,41 @@ function ChildComponent() {
   <li><p><code>useEffect</code>: Replaces <code>componentDidMount</code>, <code>componentDidUpdate</code>, <code>componentWillUnmount</code>. It gives you the ability to do a side effect function using a happened effect. We can use a list dependency to let React know that we want <code>useEffect</code> to be used as necessary or let it be blank so it's used only once.</p></li>
   <li><p><code>useRef</code>: Able to take an object as a reference. The current property contains information related to the referred object.</p></li>
 </ul>
-
+<hr>
 <h4 class="text-center">Laravel</h4>
 <h6 class="text-center">1- Laravel From Scratch | 4+ Hour Course</h6>
 <div class="embed-responsive embed-responsive-16by9" style="max-width: 800px; margin: 0 auto;">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MYyJ4PuL4pY" allowfullscreen></iframe>
 </div>
 <br><hr>
-<p>Views in Laravel are responsible for rendering the HTML that is sent to the browser. They are typically created using the Blade templating engine.</p>
+<h6>- Laravel Documentation:</h6>
+<p><a href="https://laravel.com/docs" target="_blank">https://laravel.com/docs</a></p>
+<p>- <code>dd</code> stands for "dump and die" in Laravel. It is a debugging function that prints the variables and halts the execution of the script.</p>
 
-<p><code>dd</code> stands for "dump and die" in Laravel. It is a debugging function that prints the variables and halts the execution of the script.</p>
+<p>- <code>ddd</code> provides a more detailed and interactive debugging experience.</p>
+<p><strong>Laravel Project Structure:</strong></p>
+<p>- <code>'App'</code>folder contains the core application logic: controllers, models, middleware…</p>
+<p>- <code>'Bootstrap'</code>folder contains the app.php file that sets up the application and loads the necessary dependencies.</p>
+<p>- Middleware: They intercept and modify requests before they reach the application.</p>
+<p>we can group middleware and apply it to the routes, example:</p>
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            Route::middleware(['auth', 'admin'])->group(function () {
+                // Routes requiring both authentication and admin privileges
+            });
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+<p>- Views are responsible for rendering the HTML that is sent to the browser. They are typically created using the Blade templating engine.</p>
 
-<p><code>ddd</code> provides a more detailed and interactive debugging experience.</p>
 
 <p><strong>Routing:</strong></p>
 
-<p><code>api.php</code> is a file in Laravel where you define routes specifically for API endpoints, allowing for a separate route file dedicated to API routes.</p>
+<p><code>api.php</code> is a file where you define routes specifically for API endpoints, allowing for a separate route file dedicated to API routes.</p>
 
-<p><code>web.php</code> is a file in Laravel where you define web routes, specifying how the application responds to HTTP requests.</p>
+<p><code>web.php</code> is a file where you define web routes, specifying how the application responds to HTTP requests.</p>
 
 <div class="code-snippet-container">
     <div class="code-snippet">
@@ -371,12 +388,88 @@ function ChildComponent() {
 </div> 
 
 <p>=> Returns a view named "about"</p>
+<p>- Blade: Laravel's templating engine for creating web pages with PHP integration in HTML. </p>
+<p>- Artisan is command-line interface (CLI) tool of Laravel.</p>
+<p>- <code>php artisan make:model</code>: used to generate a new model class. (same cmd for controller, middleware, or migration…).</p>
+<p><strong>ORM:</strong></p>
+<p>- <code>Eloquent</code> is Laravel's ORM (Object-Relational Mapping) that simplifies database interactions by allowing you to work with databases using an expressive syntax in PHP.</p><br><p>Examples:</p>
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            // Retrieve all users
+            $users = App\Models\User::all();
+            
+            // Retrieve a single user by ID
+            $user = App\Models\User::find(1);
+            
+            // Retrieve users with a specific condition
+            $adminUsers = App\Models\User::where('role', 'admin')->get();
+            
+            // Create a new user
+            $newUser = App\Models\User::create([
+                'name' => 'John Doe',
+                'email' => 'john@example.com',
+                'password' => bcrypt('password'),
+            ]);
+            
+            // Update an existing user
+            $user->update(['name' => 'Jane Doe']);
+            
+            // Delete a user
+            $user->delete();    
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+<p>- Supports relationships between models like: <code>hasOne</code>, <code>hasMany</code>, <code>belongsTo</code>, <code>belongsToMany</code>.</p>
+<p>- Eloquent Observers allow one to watch for certain events on a model and perform actions in response to those events.</p>
 
-<p><code>Eloquent</code> is Laravel's ORM (Object-Relational Mapping) that simplifies database interactions by allowing you to work with databases using an expressive syntax in PHP.</p>
-
-                            
-                            
-
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            // User model
+            class User extends Model {
+                // ...
+            }
+            
+            // UserObserver
+            class UserObserver {
+                public function created(User $user) {
+                    // Action to perform when a new user is created
+                }
+            
+                public function updated(User $user) {
+                    // Action to perform when a user is updated
+                }
+            }
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div>                         
+<p>=> PS: we must register the observer In the service provider <code>'App\Providers\EventServiceProvider'</code>.</p>  
+<p><strong>Form Validation:</strong></p>   
+<p>- Laravel simplifies form validation with a built-in validation rules, example:</p> 
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            class UserController extends Controller
+            {
+                public function store(Request $request)
+                {
+                    // Validate the incoming request data
+                    $request->validate([
+                        'name' => 'required|string|max:255',
+                        'email' => 'required|email|unique:users|max:255',
+                        'password' => 'required|min:6',
+                    ]);  
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div>           
+<hr>   
+<h4 class="text-center">React and Laravel Full-stack Application practice</h4>
+<hr>
+<p>- Focusing on: how to build full-stack application, connect to the Laravel back-end with React, protected Routes,  implementing authentification, CRUD, and notifications.</p>
                             
 
             </div>
