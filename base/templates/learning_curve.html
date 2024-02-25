@@ -296,7 +296,7 @@ function ChildComponent() {
 
 <p>- We should use key=index in map to avoid confusion.</p>
 
-<p>- Styling with ReactJS (CSS): Inline, module, external, also we can use the  CSS-in-JS libraries: (<code>import styled from 'styled-components';</code>) and Emotion (<code>import { css } from '@emotion/react';</code>);</p>
+<p>- Styling with ReactJS (CSS): Inline, module, external, also we can use the  CSS-in-JS libraries: (<code>import styled from 'styled-components';</code>) and Emotion (<code>import { css } from '@emotion/react';</code>).</p>
  
 <br>
 <p>- React Router:</p>
@@ -387,7 +387,7 @@ function ChildComponent() {
     <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
 </div> 
 
-<p>=> Returns a view named "about"</p>
+<p>=> Returns a view named "about".</p>
 <p>- Blade: Laravel's templating engine for creating web pages with PHP integration in HTML. </p>
 <p>- Artisan is command-line interface (CLI) tool of Laravel.</p>
 <p>- <code>php artisan make:model</code>: used to generate a new model class. (same cmd for controller, middleware, or migration…).</p>
@@ -447,6 +447,32 @@ function ChildComponent() {
     <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
 </div>                         
 <p>=> PS: we must register the observer In the service provider <code>'App\Providers\EventServiceProvider'</code>.</p>  
+<p>- Scope filtering is a way to apply filters to your queries within Eloquent models, Example:</p>
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            // Inside the Post model
+
+            class Post extends Model
+            {
+                public function scopePublished($query)
+                {
+                 return $query->where('status', 'published');
+                }
+            }
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+<p> => Now we use this scope in our controller to retrieve published books.</p>
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            $publishedPosts = Post::published()->get();
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
 <p><strong>Form Validation:</strong></p>   
 <p>- Laravel simplifies form validation with a built-in validation rules, example:</p> 
 <div class="code-snippet-container">
@@ -465,7 +491,37 @@ function ChildComponent() {
         </code></pre>
     </div>
     <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
-</div>           
+</div>    
+<p><strong>Authentication:</strong></p>      
+<p>- Generate the authentication scaffolding: <code>php artisan make:auth</code>.</p> 
+<p>- Run migration: <code>php artisan migrate</code>.</p> 
+<p>- Update User Model by adding <code>‘Authenticatable’</code> trait to it, to provide the necessary methods for user authentication.</p> 
+<p>- We can Display Authentication Status in Views:</p> 
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+            {% verbatim %}
+        @auth
+            {{-- The user is authenticated --}}
+        @else
+            {{-- The user is not authenticated --}}
+        @endauth
+        {% endverbatim %}
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
+<p>- We can also access the authenticated user:</p> 
+<div class="code-snippet-container">
+    <div class="code-snippet">
+        <pre><code class="language-javascript line-numbers">
+        @auth
+        {% verbatim %} Welcome, {{ auth()->user()->name }}{% endverbatim %}
+        @endauth
+        </code></pre>
+    </div>
+    <button class="copy-button" onclick="copyToClipboard('.code-snippet:first-of-type')">Copy Code</button>
+</div> 
 <hr>   
 <h4 class="text-center">React and Laravel Full-stack Application practice</h4>
 <hr>
